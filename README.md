@@ -31,6 +31,8 @@ description: '##Plan'
     * [ ] SCompoundWidget
 * [ ] **Core**
   * [ ] Container
+  * [ ] FString
+  *
   * [ ] Misc
 * [ ] **Engine**
   * [ ] Components
