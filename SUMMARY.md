@@ -11,8 +11,8 @@
 
 ## UnrealEngine
 
-* [Core](unrealengine/core.md)
-* [🖐 UObject](unrealengine/uobject.md)
+* [Core](unrealengine/core/README.md)
+  * [🖐 UObject](unrealengine/core/uobject.md)
 * [Slate](unrealengine/slate/README.md)
   * [FSlateApplication](unrealengine/slate/fslateapplication.md)
   * [Untitled](unrealengine/slate/untitled.md)

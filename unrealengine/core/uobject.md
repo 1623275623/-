@@ -11,7 +11,7 @@ coverY: 0
 
 ## UObject 的创建和销毁
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>UObject对象的创建过程</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>UObject对象的创建过程</p></figcaption></figure>
 
 
 
