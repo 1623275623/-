@@ -219,3 +219,36 @@ Style->Set("TestContent.PluginAction", new IMAGE_BRUSH_SVG(TEXT("PlaceholderButt
 
 所以必须记住PluginName + CommandInfo name； 当我们想要为命令设置 Style的时候。当我们自己写代码的时候，只要顺着这个模子写就不会出什么大问题。
 
+
+
+那么这三个类是如何被组织起来一起工作的呢？
+
+当模块加载的时候，第一个首先被调用的肯定就是模块的`StartupModule` 函数，我们从最基本的插件当中了解到的是首先进行样式类和命令类的创建和初始化工作。
+
+```cpp
+
+FTestContentStyle::Initialize();
+FTestContentStyle::ReloadTextures();
+
+FTestContentCommands::Register();
+
+PluginCommands = MakeShareable(new FUICommandList);
+
+```
+
+那么在模组类中的配置就是一个成员变量和一个函数。
+
+```cpp
+ TSharedPtr<class FUICommandList> PluginCommands;
+```
+
+```cpp
+void RegisterMenus();
+```
+
+
+
+
+
+
+
