@@ -25,6 +25,7 @@
   * [Module](unrealengine/core/module.md)
   * [Garbage Collection](unrealengine/core/garbage-collection.md)
   * [FProperty](unrealengine/core/fproperty.md)
+  * [getPrivateStaticClass()](unrealengine/core/getprivatestaticclass.md)
   * [Unreal Reflection](unrealengine/core/unreal-reflection.md)
   * [🖐 UObject](unrealengine/core/uobject.md)
 * [Slate](unrealengine/slate/README.md)

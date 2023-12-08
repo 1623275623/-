@@ -4,6 +4,16 @@
 
 
 
+
+
+
+
+
+
+
+
+## 反射内容实战
+
 ## 获取类型对象
 
 如果想获取到程序里定义的所有Class，方便的方法是。
@@ -32,6 +42,8 @@ UClass* classObj=FindObject<UClass>(ANY_PACKAGE,"MyClass");
 ```
 
 FindObject的原理。
+
+> 在对蓝图类执行这个操作的时候，类名后面一定要加\_C 。虽然现在自己还不知道这个是为什么.
 
 
 
