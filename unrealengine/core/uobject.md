@@ -66,9 +66,15 @@ UE中DisregardForGC Object有数量限制，通过gc.MaxObjectsNotConsideredByGC
 
 {% embed url="https://1danielcoelho.github.io/unreal-engine-basics-base-classes/" %}
 
+{% @github-files/github-code-block %}
+
+## [https://github.com/donaldwuid/unreal\_source\_explained/blob/master/main/initialization.md](https://github.com/donaldwuid/unreal\_source\_explained/blob/master/main/initialization.md)
+
 ## Outer对象，父子对象
 
 由UObject::GetOuter() 获取自己的Outer对象。任何对象的OuterMost也就是最上面的对象都是UPackage。那么到底什么是Outer，Outer表示对象之间的所属关系。我之前一直包含关系但是好像也不是，有时候也是。Level中的所有Actor的Outer是Level，Level的Outer是Map.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://forums.unrealengine.com/t/what-is-the-purpose-of-a-uobjects-outer/647169/3" %}
 
