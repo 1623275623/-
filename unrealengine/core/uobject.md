@@ -52,7 +52,7 @@ public:
 
 ## DisregardForGC
 
-UObjectArray的一个重要概念，称为DisregardForGC。UE4有一部分UObject常驻内存，比如C++类反射信息对应的UObject，他们永远不会被GC，这些UObject被称为DisregardForGC Object.
+UObjectArray的一个重要概念，称为DisregardForGC。UE4有一部分UObject常驻内存，比如C++类反射信息对应的UObject，他们永远不会被GC，这些UObject被称为DisregardForGC Object. Disregard的意思就是忽视 轻视的意思。那这个词的意思就是被GC所忽视的意思。
 
 数组可以分为两个部分，前面的部分存储DisregardForGC Object，后面的部分
 
@@ -64,11 +64,15 @@ UE中DisregardForGC Object有数量限制，通过gc.MaxObjectsNotConsideredByGC
 
 ，编程的时候
 
+{% embed url="https://1danielcoelho.github.io/unreal-engine-basics-base-classes/" %}
+
 ## Outer对象，父子对象
 
-由UObject::GetOuter() 获取自己的Outer对象。
+由UObject::GetOuter() 获取自己的Outer对象。任何对象的OuterMost也就是最上面的对象都是UPackage。那么到底什么是Outer，Outer表示对象之间的所属关系。我之前一直包含关系但是好像也不是，有时候也是。Level中的所有Actor的Outer是Level，Level的Outer是Map.
 
+{% embed url="https://forums.unrealengine.com/t/what-is-the-purpose-of-a-uobjects-outer/647169/3" %}
 
+想写一下大招的小插件。
 
 ## UPackage 和顶层对象
 
@@ -111,8 +115,6 @@ UE中DisregardForGC Object有数量限制，通过gc.MaxObjectsNotConsideredByGC
 
 
 
-
-
 ## UObject的反射
 
 关于反射这是一个十分巨大的话题，下面我们就详细的讨论一下这一部分。首先如何理解反射。当程序被编译为机器码的时候，程序是不能理解我们写代码的时候所谓的类、方法、函数这些概念的。只有一条条冰冷的指令。为了在程序运行的时候，获取相关信息。就要用到反射。说白点就是将我们写的类函数这些内容用小本本记录下来，在这里这个小本本就是UClass类（最为普遍的一种情况）。
@@ -120,8 +122,6 @@ UE中DisregardForGC Object有数量限制，通过gc.MaxObjectsNotConsideredByGC
 可能每一个第一次写UE的代码的人都对代码中的一些宏，一些文件感到奇怪。其实这些内容打大部分情况下都是为反射来服务的。
 
 当我们完成代码的编写的时候，首先是UHT这个工具扫描文件，看那个文件修改了。如果文件修改了。UHT就会扫描特定的宏，根据宏生成特定的代码。这些代码会生成在特定的地方。这些代码当中一部分就记录了我们类的信息，它已经成为了我们的类的一部分，并且随着我们的类的编译而一起编译。
-
-
 
 那么我们就从一个简单的代码开始看。GENERATE\_BODY()
 
@@ -143,7 +143,29 @@ UE中DisregardForGC Object有数量限制，通过gc.MaxObjectsNotConsideredByGC
 
 
 
+## UClass
 
+
+
+## EClassFlags
+
+> CLASS\_Native指的是在C++里定义的类，用来和蓝图类区分。CLASS\_Intrinsic指的是告诉UHT不要帮我生成反射代码，我要自己写，一般是引擎内部的类才会用到。
+
+
+
+关于两个
+
+```
+RF_ClassDefaultObject|RF_ArchetypeObject
+```
+
+所有的CDO对象都同时拥有上面的两个flags，但是CDO的组件只有上面的第二个flag.
+
+> 引擎在构建组件对象的时候会使用拷贝原型的方式来对其实例化——既然已经有了现成的“标准答案”在，为什么不直接“抄答案”呢？使用原型来实例化对象，速度比new一个出来更快，而且相比拷贝构造函数，利用原型可以处理“新对象是派生类”的情况。
+
+FObjectInitializer 的主要作用貌似体现在子对象的构造上。
+
+&#x20;
 
 
 
