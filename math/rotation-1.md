@@ -79,7 +79,7 @@ Unit quaternion: $$q = [cos \frac{\theta}{2},usin\frac{\theta}{2}]$$
 
 我们的目的是将原始的三维向量 $$p$$ 旋转到最终的结果 $$p^{'}$$
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 q 和 -q 表示的是相同的旋转。
 
@@ -87,7 +87,7 @@ q 和 -q 表示的是相同的旋转。
 
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Quaternion Interpolation
 
