@@ -1,6 +1,6 @@
 # getPrivateStaticClass()
 
-<pre class="language-cpp"><code class="lang-cpp"><strong>void GetPrivateStaticClassBody(
+<pre class="language-cpp" data-full-width="true"><code class="lang-cpp"><strong>void GetPrivateStaticClassBody(
 </strong>	const TCHAR* PackageName,
 	const TCHAR* Name,
 	UClass*&#x26; ReturnClass,
@@ -20,21 +20,21 @@
 	
 	
 GetPrivateStaticClassBody( \
-			StaticPackage(), \															     	const TCHAR* PackageName,
-			(TCHAR*)TEXT(#TClass) + 1 + ((StaticClassFlags &#x26; CLASS_Deprecated) ? 11 : 0), \  	const TCHAR* Name,
-			Z_Registration_Info_UClass_##TClass.InnerSingleton, \								UClass*&#x26; ReturnClass,
-			StaticRegisterNatives##TClass, \													void(*RegisterNativeFunc)(),
-			sizeof(TClass), \																	uint32 InSize,
-			alignof(TClass), \																	uint32 InAlignment,
-			TClass::StaticClassFlags, \															EClassFlags InClassFlags,
-			TClass::StaticClassCastFlags(), \													EClassCastFlags InClassCastFlags,
-			TClass::StaticConfigName(), \														const TCHAR* InConfigName,
-			(UClass::ClassConstructorType)InternalConstructor&#x3C;TClass>, \						UClass::ClassConstructorType InClassConstructor,	
-			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller&#x3C;TClass>, \  UClass::ClassVTableHelperCtorCallerType InClassVTableHelperCtorCaller,
-			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass), \								FUObjectCppClassStaticFunctions&#x26;&#x26; InCppClassStaticFunctions,
-			&#x26;TClass::Super::StaticClass, \														UClass::StaticClassFunctionType InSuperClassFn,
-			&#x26;TClass::WithinClass::StaticClass \													UClass::StaticClassFunctionType InWithinClassFn
-		); \
+StaticPackage(), \									const TCHAR* PackageName,
+(TCHAR*)TEXT(#TClass) + 1 + ((StaticClassFlags &#x26; CLASS_Deprecated) ? 11 : 0), \  	const TCHAR* Name,
+Z_Registration_Info_UClass_##TClass.InnerSingleton, \					UClass*&#x26; ReturnClass,
+StaticRegisterNatives##TClass, \							void(*RegisterNativeFunc)(),
+sizeof(TClass), \									uint32 InSize,
+alignof(TClass), \									uint32 InAlignment,
+TClass::StaticClassFlags, \								EClassFlags InClassFlags,
+TClass::StaticClassCastFlags(), \							EClassCastFlags InClassCastFlags,
+TClass::StaticConfigName(), \								const TCHAR* InConfigName,
+(UClass::ClassConstructorType)InternalConstructor&#x3C;TClass>, \				UClass::ClassConstructorType InClassConstructor,	
+(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller&#x3C;TClass>, \      UClass::ClassVTableHelperCtorCallerType InClassVTableHelperCtorCaller,
+UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass), \					FUObjectCppClassStaticFunctions&#x26;&#x26; InCppClassStaticFunctions,
+&#x26;TClass::Super::StaticClass, \								UClass::StaticClassFunctionType InSuperClassFn,
+&#x26;TClass::WithinClass::StaticClass \							UClass::StaticClassFunctionType InWithinClassFn
+); \
 		
 
 
@@ -323,8 +323,6 @@ public: \
 		InSlot &#x3C;&#x3C; (UObject*&#x26;)Res; \
 	}
 
-
-
 	private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATestActorRotation(ATestActorRotation&#x26;&#x26;); \
@@ -351,27 +349,6 @@ public: \
 
 	static void __DefaultConstructor(const FObjectInitializer&#x26; X) { new((EInternal*)X.GetObj())TClass; }
 	NO_API virtual ~ATestActorRotation();
-
-public:
-
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	UStaticMeshComponent* CenterObject;
-
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	UStaticMeshComponent* FarObject;
-
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	float Radious;
-
-	UPROPERTY()
-	float Degree = 0.0f;
-	
-	// Sets default values for this actor's properties
-	ATestActorRotation();
-
-
-	UFUNCTION(CallInEditor)
-	void Run();
 
 protected:
 	// Called when the game starts or when spawned

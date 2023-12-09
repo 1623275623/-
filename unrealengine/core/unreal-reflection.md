@@ -8,10 +8,6 @@
 
 
 
-
-
-
-
 ## 反射内容实战
 
 ## 获取类型对象
@@ -121,10 +117,6 @@ void GetDerivedClasses(UClass* ClassToLookFor,TArray<UClass*>& Result,bool bRecu
 
 
 
-
-
-
-
 ## 反射调用函数
 
 在一个UObject上通过名字调用UFunction方法最简单的方式是：
@@ -152,3 +144,16 @@ int32 InvokeFunction(UObject* obj,FName functionName,float param1)
 int r = InvokeFunction(obj,"Func",123.f);
 
 ```
+
+
+
+
+
+
+
+总结：
+
+我i想知道我们一共进行了多少次的信息的收集
+
+
+
